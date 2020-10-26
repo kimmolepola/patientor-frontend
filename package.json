@@ -21,13 +21,12 @@
     "react-scripts": "^4.0.0",
     "semantic-ui-css": "^2.4.1",
     "semantic-ui-react": "^0.88.1",
-    "typescript": "^3.9.7"
-  },
-  "devDependencies": {
+    "typescript": "^3.9.7",
     "@typescript-eslint/eslint-plugin": "^4.5.0",
     "@typescript-eslint/parser": "^4.5.0",
     "eslint-config-react": "^1.1.7"
   },
+  "devDependencies": {},
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
