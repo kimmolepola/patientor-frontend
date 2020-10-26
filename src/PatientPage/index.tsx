@@ -51,7 +51,7 @@ const EntryComponent: React.FC<{ entry: Entry }> = ({ entry }) => {
                     <div><b>{date}</b> <Icon name='stethoscope' size='big' /><b>{"employerName" in entry ? entry.employerName : ""}</b></div>
                     <div><i style={{ color: 'gray' }}>{description}</i></div>
                     <ul>{diagnosisCodes?.map(x => <li key={id + x}>{x} {diagnoses[x] ? diagnoses[x].name : ""}</li>)}</ul>
-                    <div>{"sickLeave" in entry ? "Sick leave: " + entry.sickLeave?.startDate + " - " + entry.sickLeave?.endDate : ""}</div>
+                    <div>{"sickLeave" in entry && entry.sickLeave ? `Sick leave: ${entry.sickLeave.startDate} - ${entry.sickLeave.endDate}` : ""}</div>
                     <div>Specialist: {entry.specialist}</div>
                 </Segment>
             );
@@ -72,6 +72,7 @@ const Entries: React.FC<Patient> = ({ entries }) => {
 };
 // eslint-disable-next-line @typescript-eslint/no-explicit-any 
 const isPatient = (object: any): object is Patient => {
+    /*eslint-disable @typescript-eslint/no-unsafe-member-access*/
     return (
         object !== undefined
         && object.id !== undefined
@@ -79,6 +80,7 @@ const isPatient = (object: any): object is Patient => {
         && object.occupation !== undefined
         && object.gender !== undefined
     );
+    /*eslint-enable @typescript-eslint/no-unsafe-member-access*/
 };
 
 const PatientPage: React.FC = () => {
@@ -90,7 +92,7 @@ const PatientPage: React.FC = () => {
 
     if (!patient || !patient.dateOfBirth || !patient.ssn || !patient.entries) {
         try {
-            axios.get<Patient>(`${apiBaseUrl}/patients/${id}`).then(response => {
+            axios.get<Patient>(`${apiBaseUrl}/patients/${id}`).then(response => { //eslint-disable-line @typescript-eslint/no-floating-promises
                 //dispatch({ type: "UPDATE_PATIENT", payload: response.data });
                 dispatch(updatePatient(response.data));
                 patient = response.data;
@@ -120,8 +122,8 @@ const PatientPage: React.FC = () => {
             dispatch(addEntry(patient, newEntry));
             closeModal();
         } catch (e) {
-            console.error(e.response.data);
-            setError(e.response.data.error);
+            console.error(e.response.data); //eslint-disable-line @typescript-eslint/no-unsafe-member-access
+            setError(e.response.data.error); //eslint-disable-line @typescript-eslint/no-unsafe-member-access
         }
     };
 

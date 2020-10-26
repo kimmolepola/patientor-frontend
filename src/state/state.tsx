@@ -35,4 +35,4 @@ export const StateProvider: React.FC<StateProviderProps> = ({
     </StateContext.Provider>
   );
 };
-export const useStateValue = () => useContext(StateContext);
+export const useStateValue = (): [State, React.Dispatch<Action>] => useContext(StateContext);

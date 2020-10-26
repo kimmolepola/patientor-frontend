@@ -37,8 +37,8 @@ const PatientListPage: React.FC = () => {
       dispatch(addPatient(newPatient));
       closeModal();
     } catch (e) {
-      console.error(e.response.data);
-      setError(e.response.data.error);
+      console.error(e.response.data); //eslint-disable-line @typescript-eslint/no-unsafe-member-access
+      setError(e.response.data.error); //eslint-disable-line @typescript-eslint/no-unsafe-member-access
     }
   };
 

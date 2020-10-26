@@ -13,7 +13,9 @@ import PatientPage from "./PatientPage";
 const App: React.FC = () => {
   const [, dispatch] = useStateValue();
   React.useEffect(() => {
-    axios.get<void>(`${apiBaseUrl}/ping`);
+    async () => {
+      await axios.get<void>(`${apiBaseUrl}/ping`);
+    };
 
     const fetchDiagnosisList = async () => {
       try {
@@ -38,8 +40,8 @@ const App: React.FC = () => {
       }
     };
 
-    fetchDiagnosisList();
-    fetchPatientList();
+    fetchDiagnosisList(); //eslint-disable-line @typescript-eslint/no-floating-promises
+    fetchPatientList(); //eslint-disable-line @typescript-eslint/no-floating-promises
   }, [dispatch]);
 
   return (
