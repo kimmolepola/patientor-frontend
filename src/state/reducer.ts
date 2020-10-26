@@ -61,6 +61,8 @@ export type Action =
     payload: Patient;
   };
 
+//            entries: [...state.patients[action.payload.patient.id].entries, action.payload.entry]
+
 export const reducer = (state: State, action: Action): State => {
   switch (action.type) {
     case "ADD_ENTRY":
@@ -70,7 +72,7 @@ export const reducer = (state: State, action: Action): State => {
           ...state.patients,
           [action.payload.patient.id]: {
             ...state.patients[action.payload.patient.id],
-            entries: [...state.patients[action.payload.patient.id].entries, action.payload.entry]
+            entries: state.patients[action.payload.patient.id].entries ? state.patients[action.payload.patient.id].entries?.concat(action.payload.entry) : [action.payload.entry]
           }
         }
       };
