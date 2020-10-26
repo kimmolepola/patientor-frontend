@@ -64,6 +64,7 @@ export type Action =
 //            entries: [...state.patients[action.payload.patient.id].entries, action.payload.entry]
 
 export const reducer = (state: State, action: Action): State => {
+  console.log(action.payload);
   switch (action.type) {
     case "ADD_ENTRY":
       return {
