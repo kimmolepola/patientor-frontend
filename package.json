@@ -29,7 +29,7 @@
     "eslint-config-react": "^1.1.7"
   },
   "scripts": {
-    "start": "react-scripts",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
