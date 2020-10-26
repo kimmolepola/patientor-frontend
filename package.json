@@ -2,6 +2,9 @@
   "name": "patientor",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "12.x"
+  },
   "dependencies": {
     "@types/axios": "^0.14.0",
     "@types/jest": "24.0.19",
@@ -17,12 +20,13 @@
     "react-scripts": "^4.0.0",
     "semantic-ui-css": "^2.4.1",
     "semantic-ui-react": "^0.88.1",
-    "typescript": "^3.7.0",
+    "typescript": "^3.7.0"
+  },
+  "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^2.12.0",
     "@typescript-eslint/parser": "^2.12.0",
     "eslint-config-react": "^1.1.7"
   },
-  "devDependencies": {},
   "scripts": {
     "start": "react-scripts",
     "build": "react-scripts build",
