@@ -26,6 +26,7 @@ export const updatePatient = (patient: Patient): Action => {
 };
 
 export const setPatientList = (patients: Patient[]): Action => {
+  console.log("set patient list action -------");
   return {
     type: "SET_PATIENT_LIST",
     payload: patients
@@ -64,7 +65,7 @@ export type Action =
 //            entries: [...state.patients[action.payload.patient.id].entries, action.payload.entry]
 
 export const reducer = (state: State, action: Action): State => {
-  console.log(action.payload);
+  console.log("reduucceris -----", action.payload);
   switch (action.type) {
     case "ADD_ENTRY":
       return {
