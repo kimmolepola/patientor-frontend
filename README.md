@@ -1,4 +1,4 @@
-# Patientor diagnosis app
+# Patientor diagnosis app - frontend
 
 Technologies: Typescript, React, React router, React context<br />
 Frontend: https://aqueous-fjord-67575.herokuapp.com/ <br />
