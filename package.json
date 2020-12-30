@@ -39,7 +39,7 @@
     "eject": "react-scripts eject",
     "lint": "eslint \"./src/**/*.{ts,tsx}\"",
     "lint:fix": "eslint './src/**/*.{ts,tsx}' --fix",
-    "herokuprepare": "heroku buildpacks:set https://github.com/heroku/heroku-buildpack-static.git"
+    "herokuprepare": "heroku buildpacks:set https://buildpack-registry.s3.amazonaws.com/buildpacks/mars/create-react-app.tgz"
   },
   "browserslist": {
     "production": [
