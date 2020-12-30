@@ -57,7 +57,7 @@ const PatientListPage: React.FC = () => {
           </Table.Row>
         </Table.Header>
         <Table.Body>
-          {patients ? 
+          {Object.values(patients).length != 0 ? 
           Object.values(patients).map((patient: Patient) => (
             <Table.Row key={patient.id}>
               <Table.Cell onClick={() => history.push(`/patient/${patient.id}`)} style={{ cursor: 'pointer' }} >{patient.name}</Table.Cell>
@@ -67,7 +67,7 @@ const PatientListPage: React.FC = () => {
                 <HealthRatingBar showText={false} rating={1} />
               </Table.Cell>
             </Table.Row>
-          )) : "loading..." }
+          )) : <Table.Row><Table.Cell>loading...</Table.Cell></Table.Row>}
         </Table.Body>
       </Table>
       <AddPatientModal
