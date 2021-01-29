@@ -1,6 +1,7 @@
 # Patientor
 
 Technologies: TypeScript, React, React router, React context <br />
+(Using free tier cloud services, please wait for service to wake up, refresh page if necessary) <br />
 Frontend on AWS: https://prod.d3m38rb4suy3ba.amplifyapp.com <br />
 Frontend on Azure: https://kimmolepola-patientor-frontend.azurewebsites.net <br />
 Frontend on Heroku: https://kimmolepola-patientor-frontend.herokuapp.com <br />
